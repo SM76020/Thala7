@@ -21,7 +21,7 @@ function checkInput() {
     oopsMessage.innerHTML = '';
 
     // Check if sum of digits is 7, or length of letters is 7, or length of digits is 7, or userInput is exactly 7 digits
-    if (sum === 7 || length === 7 || digits.length === 7 || /^\d{7}$/.test(userInput)) {
+    if (sum === 7 || length === 7 || digits.length === 7 || (digits.length === 7 && letters.length === 0)) {
         resultContainer.innerHTML = 'Thala for a Reason';
         resultContainer.classList.add('show');
         imageContainer.style.display = 'flex';
