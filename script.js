@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const inputField = document.getElementById('input');
+    const checkButton = document.getElementById('check-button');
+
+    inputField.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default action (form submission)
+            checkInput();
+        }
+    });
+
+    checkButton.addEventListener('click', checkInput);
+});
+
 function checkInput() {
     const userInput = document.getElementById('input').value;
 
@@ -30,7 +44,13 @@ function checkInput() {
         for (let i = 1; i <= 7; i++) {
             const img = document.createElement('img');
             img.src = `images/msdhoni${i}.jpg`; // Replace with your actual image filenames
+            img.alt = `MS Dhoni ${i}`; // Adding alt attribute for accessibility
+            img.style.maxWidth = '100px'; // Adjust the style as needed
+            img.style.margin = '5px'; // Adjust the style as needed
             imageContainer.appendChild(img);
+
+            // Log for debugging purposes
+            console.log(`Image ${i} src: ${img.src}`);
         }
 
         // Play the audio if it's not already playing
@@ -40,7 +60,7 @@ function checkInput() {
     } else {
         oopsMessage.innerHTML = 'Oops!';
         oopsMessage.classList.add('show');
-        
+
         // Pause the audio if it's currently playing
         if (!audio.paused) {
             audio.pause();
