@@ -43,7 +43,7 @@ function checkInput() {
         // Add MS Dhoni photos
         for (let i = 1; i <= 7; i++) {
             const img = document.createElement('img');
-            img.src = `images/msdhoni${i}.jpg`; // Replace with your actual image filenames
+            img.src = `msdhoni${i}.jpg`; // Replace with your actual image filenames
             img.alt = `MS Dhoni ${i}`; // Adding alt attribute for accessibility
             img.style.maxWidth = '100px'; // Adjust the style as needed
             img.style.margin = '5px'; // Adjust the style as needed
